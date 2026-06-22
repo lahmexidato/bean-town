@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The café — Bean Town</title>
+  <meta name="description" content="Bean Town café doesn't exist yet. Here's what it would look like — the bar, the drinks, the whole idea.">
+  <meta property="og:title" content="The café — Bean Town">
+  <meta property="og:description" content="It doesn't exist yet. Here's the blueprint.">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── Navigation ─── -->
+  <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Bean Town home">
+      <span class="logo-text logo-text--light">bean town</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="about.html">about</a></li>
+      <li><a href="cafe.html" aria-current="page">café</a></li>
+      <li><a href="learn.html">learn</a></li>
+      <li><a href="map.html">map</a></li>
+      <li><a href="contact.html">contact</a></li>
+      <!-- TODO: Replace # with Substack URL once set up -->
+      <li><a href="#" class="btn btn--outline">newsletter →</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <a href="about.html">about</a>
+    <a href="cafe.html">café</a>
+    <a href="learn.html">learn</a>
+    <a href="map.html">map</a>
+    <a href="contact.html">contact</a>
+    <!-- TODO: Replace # with Substack URL once set up -->
+    <a href="#">newsletter →</a>
+  </div>
+
+  <main>
+
+    <!-- ─── Hero ─── -->
+    <section class="page-hero" aria-label="The Bean Town café">
+      <p class="page-hero__kicker">the bean town café</p>
+      <h1 class="page-hero__title">it doesn't exist yet.</h1>
+      <p class="page-hero__subtitle">
+        Here's the blueprint.
+      </p>
+    </section>
+
+    <!-- ─── Why ─── -->
+    <section class="cafe-intro">
+      <p class="cafe-intro__pull">
+        "Most specialty coffee shops are technically impressive and socially terrifying.
+        We want to build the other kind."
+      </p>
+      <div class="cafe-intro__body">
+        <p>
+          Third wave coffee is extraordinary. The quality, the sourcing, the care that goes
+          into getting a single-origin bean from a small farm to your cup — it's genuinely
+          remarkable. But walk into most places that do it well and you'll feel it: the pressure
+          to already know what you're ordering.
+        </p>
+        <p>
+          Bean Town is built on a different premise. The knowledge is the product. The experience
+          of understanding something new about where your coffee came from — that's what you're
+          there for. Not the extraction ratio. The story behind it.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── Three principles ─── -->
+    <section class="cafe-principles" aria-label="The three principles">
+      <div class="cafe-principles__inner">
+        <p class="section-label">how it works</p>
+        <div class="principles-grid">
+
+          <div class="principle">
+            <p class="principle__num">01</p>
+            <h2 class="principle__title">you sit down.</h2>
+            <p class="principle__body">
+              No takeaway. No to-go cups. The experience can't be rushed and it doesn't need
+              to be. If you're here, you're here. The cup stays in the room.
+            </p>
+          </div>
+
+          <div class="principle">
+            <p class="principle__num">02</p>
+            <h2 class="principle__title">the bar tells a story.</h2>
+            <p class="principle__body">
+              Walk the length of the bar to order. On the wall behind the barista: the coffee's
+              whole journey — cherry on the tree, the picking, the processing, the roast. By the
+              time you reach the end, you know something you didn't at the start.
+            </p>
+          </div>
+
+          <div class="principle">
+            <p class="principle__num">03</p>
+            <h2 class="principle__title">the drink fits the country.</h2>
+            <p class="principle__body">
+              We don't just serve single-origin from Ethiopia — we serve the jebena ceremony
+              alongside roasted barley, the way it's done in Addis. Coffee as it was meant to
+              be drunk, where it came from.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── The bar journey ─── -->
+    <section class="cafe-bar" aria-label="The bar journey">
+      <div class="cafe-bar__inner">
+        <p class="section-label section-label--light">the bar</p>
+        <h2 class="cafe-bar__title">a walk through the whole thing</h2>
+        <p class="cafe-bar__intro">
+          The bar runs the length of the room. You walk it left to right on the way to ordering.
+          The wall beside you shows everything that happened before your cup existed.
+        </p>
+
+        <ol class="bar-steps">
+          <li class="bar-step">
+            <span class="bar-step__num">1</span>
+            <div>
+              <p class="bar-step__title">the farm</p>
+              <p class="bar-step__body">A coffee tree takes 3–4 years to produce its first crop. A single tree yields around 2,000 cherries a year — roughly one pound of roasted coffee. That's one tree. One year.</p>
+            </div>
+          </li>
+          <li class="bar-step">
+            <span class="bar-step__num">2</span>
+            <div>
+              <p class="bar-step__title">the picking</p>
+              <p class="bar-step__body">Specialty coffee is almost always picked by hand, cherry by cherry, each one checked for ripeness. That's why it costs what it does. That's also why the person who picked it matters.</p>
+            </div>
+          </li>
+          <li class="bar-step">
+            <span class="bar-step__num">3</span>
+            <div>
+              <p class="bar-step__title">the processing</p>
+              <p class="bar-step__body">Washed. Natural. Honey. The method changes the flavour more than almost anything else. Washed is clean and bright. Natural is fruity and funky. Honey is somewhere in between. None of those words mean what they sound like, which is half the problem with how specialty coffee talks to people.</p>
+            </div>
+          </li>
+          <li class="bar-step">
+            <span class="bar-step__num">4</span>
+            <div>
+              <p class="bar-step__title">the roast</p>
+              <p class="bar-step__body">Temperature, time, colour. The roaster decides how much of the origin to preserve and how much to transform. Lighter roasts keep more of the terroir — the tasting notes you actually read on the bag. Darker roasts bring in the roast itself. Neither is better. They're different things.</p>
+            </div>
+          </li>
+          <li class="bar-step">
+            <span class="bar-step__num">5</span>
+            <div>
+              <p class="bar-step__title">your cup</p>
+              <p class="bar-step__body">You're at the end of the bar. You know what you're ordering. You sit down with it.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="cafe-bar__footnote">
+          Inspired by Finca La Azotea in Antigua, Guatemala — a working farm that walks you through
+          the whole process in real life, from the cherry on the tree to the cup in your hand.
+          If you're ever in Antigua, go.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── What's on ─── -->
+    <section class="editions cafe-menu" id="cafe-menu" aria-label="What's on">
+      <p class="section-label">what's on</p>
+      <p class="cafe-menu__intro">
+        The menu doesn't change much. Each country gets its cultural drink and the thing
+        that belongs beside it. Not the specialty interpretation — the original. The one
+        that exists for reasons that have nothing to do with extraction ratios.
+      </p>
+      <div class="cards-grid">
+
+        <article class="card">
+          <p class="card__country">Mexico</p>
+          <h2 class="card__prep">Café de olla</h2>
+          <p class="card__pairing">+ a concha</p>
+          <p class="card__copy">
+            Simmered with cinnamon and piloncillo in a clay pot. This is the home version —
+            the one your abuela had a strong opinion about — not a specialty interpretation.
+            Drunk slowly, before anything else happens in the morning.
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="card__country">Ethiopia</p>
+          <h2 class="card__prep">Jebena ceremony</h2>
+          <p class="card__pairing">+ roasted barley</p>
+          <p class="card__copy">
+            Three rounds from the same grounds, each cup lighter than the last. The first
+            for the host. The second for the guest. The third for a blessing. Coffee was
+            born in Ethiopia and this is how it's still drunk there. You don't rush it.
+          </p>
+        </article>
+
+        <article class="card">
+          <p class="card__country">Japan</p>
+          <h2 class="card__prep">Kissaten drip</h2>
+          <p class="card__pairing">+ wagashi</p>
+          <p class="card__copy">
+            The kissaten is a serious coffee shop, not a café. Quiet, precise, unhurried.
+            Japan took coffee, slowed it right down, and built a whole room around it. The
+            pour-over is made in front of you like it matters. Because it does.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ─── The space ─── -->
+    <section class="cafe-space" aria-label="The space">
+      <div class="cafe-space__inner">
+        <p class="section-label section-label--light">the space</p>
+        <div class="cafe-space__grid">
+
+          <div class="space-detail">
+            <p class="space-detail__title">shoes at the door</p>
+            <p>
+              You take them off on the way in. It's a signal — you're entering a different kind
+              of space, one worth slowing down for. The idea comes partly from the remove-your-shoes
+              ritual of places built for presence. Once you're in, you're in.
+            </p>
+          </div>
+
+          <div class="space-detail">
+            <p class="space-detail__title">beans like a market</p>
+            <p>
+              Coffee is displayed by origin country the way fruit sits in a good greengrocer —
+              bananas with bananas, apples with apples. Not shelved with scores and terminology
+              you need a glossary for. Organised visually, navigably, like something you're
+              meant to look at, pick up, and ask about.
+            </p>
+          </div>
+
+          <div class="space-detail">
+            <p class="space-detail__title">nowhere to be</p>
+            <p>
+              No wifi password. No working-from-your-laptop tables. The point isn't productivity —
+              it's presence. You're there for the drink, the story behind it, and the person
+              next to you who's there for the same reason.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA ─── -->
+    <section class="newsletter-cta cafe-cta" id="cafe-newsletter" aria-label="Stay in the loop">
+      <p class="newsletter-cta__copy">
+        First to know when it opens — and everything we're building in the meantime.
+      </p>
+      <!-- TODO: Replace REPLACE_WITH_YOUR_FORMSPREE_ID with your Formspree form ID from formspree.io -->
+      <form class="email-capture" id="cafe-email-form" action="https://formspree.io/f/xnjkqgqp" method="POST" novalidate aria-label="Newsletter sign-up">
+        <label for="cafe-email" class="sr-only">Your email address</label>
+        <input type="email" id="cafe-email" name="email" placeholder="your@email.com" required autocomplete="email">
+        <button type="submit" class="btn btn--cream">stay in the loop →</button>
+      </form>
+      <p class="email-capture__feedback" id="cafe-email-feedback" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <a href="/" class="footer-logo" aria-label="Bean Town home">
+        <span class="logo-text logo-text--light">bean town</span>
+      </a>
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">about</a></li>
+        <!-- TODO: Replace # with Instagram URL once handle is confirmed -->
+        <li><a href="#" aria-label="Bean Town on Instagram">instagram</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Bean Town</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
