@@ -4,22 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The map — Bean Town</title>
-  <meta name="description" content="An interactive map of coffee cultures around the world. Coming soon from Bean Town.">
+  <meta name="description" content="A map of places worth going to learn about coffee — inclusive cafés, farm tours, and cultural experiences around the world.">
+  <meta property="og:title" content="The map — Bean Town">
+  <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- ─── Navigation ─── -->
-  <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+  <nav class="site-nav site-nav--solid" id="site-nav" role="navigation" aria-label="Main navigation">
     <a href="/" class="nav-logo" aria-label="Bean Town home">
       <span class="logo-text logo-text--light">bean town</span>
     </a>
     <ul class="nav-links" role="list">
       <li><a href="about.html">about</a></li>
-      <li><a href="map.html" class="muted" tabindex="-1" aria-hidden="true">map</a></li>
+      <li><a href="cafe.html">café</a></li>
+      <li><a href="map.html" aria-current="page">map</a></li>
       <li><a href="contact.html">contact</a></li>
       <!-- TODO: Replace # with Substack URL once set up -->
       <li><a href="#" class="btn btn--outline">newsletter →</a></li>
@@ -33,36 +37,49 @@
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
     <a href="about.html">about</a>
-    <a href="map.html" class="muted" aria-hidden="true">map (coming soon)</a>
+    <a href="cafe.html">café</a>
+    <a href="map.html">map</a>
     <a href="contact.html">contact</a>
+    <!-- TODO: Replace # with Substack URL once set up -->
     <a href="#">newsletter →</a>
   </div>
 
   <main>
 
-    <!-- ─── Page hero ─── -->
-    <section class="page-hero">
-      <h1 class="page-hero__title">the map</h1>
-      <p class="page-hero__subtitle">An interactive world of coffee cultures. Coming soon.</p>
+    <!-- ─── Map header ─── -->
+    <section class="map-header" aria-label="Map introduction">
+      <div class="map-header__inner">
+        <h1 class="map-header__title">places worth going</h1>
+        <p class="map-header__sub">
+          Cafés, farms, and cultural coffee experiences around the world — chosen because
+          they're welcoming, not because they're intimidating.
+        </p>
+        <!-- Filter buttons -->
+        <div class="map-filters" role="group" aria-label="Filter map by type">
+          <button class="map-filter active" data-filter="all">all</button>
+          <button class="map-filter" data-filter="café">cafés</button>
+          <button class="map-filter" data-filter="farm">farms &amp; tours</button>
+        </div>
+      </div>
+      <!-- Legend -->
+      <div class="map-legend" aria-label="Map legend">
+        <span class="map-legend__item map-legend__item--verified">verified</span>
+        <span class="map-legend__item map-legend__item--researching">researching</span>
+      </div>
     </section>
 
-    <!-- ─── Placeholder ─── -->
-    <!-- MAP IS BLOCKED — awaiting Alex + Adam sign-off on map concept.
-         Once approved, build with Leaflet.js:
-         - Dark/espresso tile layer
-         - Terracotta markers for published editions
-         - Warm-gray markers for upcoming countries
-         - Click → popup with prep name + Substack link
-         Countries to mark initially: Mexico, Ethiopia, Japan, Vietnam, Colombia
-    -->
-    <div class="map-placeholder">
-      <p class="map-placeholder__title">coming soon</p>
-      <p class="map-placeholder__sub">
-        We're building an interactive map of coffee cultures around the world.
-        It'll be worth the wait.
-      </p>
-      <a href="/" class="btn btn--cream" style="margin-top: 8px;">back to home →</a>
+    <!-- ─── Map ─── -->
+    <div class="map-wrapper">
+      <div id="bean-town-map" role="application" aria-label="Interactive map of coffee places"></div>
     </div>
+
+    <!-- ─── Suggest a place ─── -->
+    <section class="map-suggest" aria-label="Suggest a place">
+      <p class="map-suggest__copy">
+        Know a place that belongs on this map? Somewhere welcoming, interesting, worth the trip?
+      </p>
+      <a href="contact.html" class="btn btn--cream">suggest a place →</a>
+    </section>
 
   </main>
 
@@ -74,6 +91,7 @@
       </a>
       <ul class="footer-links" role="list">
         <li><a href="about.html">about</a></li>
+        <!-- TODO: Replace # with Instagram URL once handle is confirmed -->
         <li><a href="#" aria-label="Bean Town on Instagram">instagram</a></li>
         <li><a href="contact.html">contact</a></li>
       </ul>
@@ -81,6 +99,170 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPeE=" crossorigin=""></script>
   <script src="js/main.js"></script>
+  <script>
+    // ─── Map data
+    // Coordinates are approximate city-level — update to precise locations as you verify each place.
+    // status: 'verified' = we know this place | 'researching' = city is on our list, specific places TBC
+    var places = [
+      {
+        name: 'Finca La Azotea',
+        city: 'Antigua, Guatemala',
+        type: 'farm',
+        status: 'verified',
+        lat: 14.558, lng: -90.733,
+        note: 'Working coffee farm with a museum and a guided walk through the full process — cherry on the tree to cup in hand. One of the best ways to understand where coffee actually comes from.'
+      },
+      {
+        name: 'Fuglen Tokyo',
+        city: 'Tokyo, Japan',
+        type: 'café',
+        status: 'verified',
+        lat: 35.664, lng: 139.692,
+        note: 'Norwegian-rooted, genuinely welcoming. Specialty coffee without the performance. They want you to understand what you\'re drinking, not feel bad that you don\'t already.'
+      },
+      {
+        name: 'Tomoca Coffee',
+        city: 'Addis Ababa, Ethiopia',
+        type: 'café',
+        status: 'verified',
+        lat: 9.023, lng: 38.747,
+        note: 'Running since 1953. One of the most beloved coffee houses in Ethiopia — the ceremonial approach is still very much alive. Coffee was born here and it shows.'
+      },
+      {
+        name: 'Market Lane Coffee',
+        city: 'Melbourne, Australia',
+        type: 'café',
+        status: 'verified',
+        lat: -37.808, lng: 144.957,
+        note: 'Origin education done without the lecture. The kind of place that answers your questions without making you feel like you shouldn\'t have asked them.'
+      },
+      // Researching — city markers only
+      {
+        city: 'Mexico City, Mexico',
+        type: 'café',
+        status: 'researching',
+        lat: 19.433, lng: -99.133,
+        note: 'We\'re finding the right places here. Suggestions welcome.'
+      },
+      {
+        city: 'Bogotá, Colombia',
+        type: 'café',
+        status: 'researching',
+        lat: 4.711, lng: -74.072,
+        note: 'Coffee-growing country with a serious café culture. Researching the most welcoming spots.'
+      },
+      {
+        city: 'Hanoi, Vietnam',
+        type: 'café',
+        status: 'researching',
+        lat: 21.028, lng: 105.854,
+        note: 'Cà phê trứng (egg coffee) territory. An entirely different relationship with coffee. Coming soon.'
+      },
+      {
+        city: 'Istanbul, Turkey',
+        type: 'café',
+        status: 'researching',
+        lat: 41.008, lng: 28.978,
+        note: 'Turkish coffee culture — sand brewing, no filter, grounds left to read. On our list.'
+      },
+      {
+        city: 'Vienna, Austria',
+        type: 'café',
+        status: 'researching',
+        lat: 48.208, lng: 16.374,
+        note: 'The coffeehouse as a way of life. You sit for hours. Nobody asks you to leave. Coming soon.'
+      },
+      {
+        city: 'Nairobi, Kenya',
+        type: 'café',
+        status: 'researching',
+        lat: -1.292, lng: 36.822,
+        note: 'Coffee-producing country with a growing independent café scene. Researching.'
+      },
+      {
+        city: 'Las Palmas, Canary Islands',
+        type: 'café',
+        status: 'researching',
+        lat: 28.124, lng: -15.437,
+        note: 'Unexpected coffee culture hub in the Atlantic. On our radar.'
+      }
+    ];
+
+    // ─── Marker icons
+    function makeIcon(status, type) {
+      var color = status === 'verified'
+        ? (type === 'farm' ? '#C8963E' : '#B5501C')
+        : '#8A8278';
+      var opacity = status === 'researching' ? '0.5' : '1';
+      return L.divIcon({
+        className: '',
+        html: '<div class="map-pin" style="background:' + color + ';opacity:' + opacity + '"></div>',
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+        popupAnchor: [0, -10]
+      });
+    }
+
+    // ─── Popup HTML
+    function makePopup(p) {
+      if (p.status === 'researching') {
+        return '<p class="map-popup__city">' + p.city + '</p>' +
+               '<p class="map-popup__name map-popup__name--muted">researching</p>' +
+               '<p class="map-popup__note">' + p.note + '</p>';
+      }
+      var typeLabel = p.type === 'farm' ? 'farm &amp; tour' : 'café';
+      return '<p class="map-popup__city">' + p.city + '</p>' +
+             '<p class="map-popup__name">' + p.name + '</p>' +
+             '<span class="map-popup__type">' + typeLabel + '</span>' +
+             '<p class="map-popup__note">' + p.note + '</p>';
+    }
+
+    // ─── Init map
+    var map = L.map('bean-town-map', {
+      center: [20, 15],
+      zoom: 2,
+      minZoom: 2,
+      maxZoom: 14,
+      zoomControl: false
+    });
+
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    // ─── Add markers
+    var markers = [];
+    places.forEach(function(p) {
+      var marker = L.marker([p.lat, p.lng], { icon: makeIcon(p.status, p.type) })
+        .bindPopup(makePopup(p), { maxWidth: 280, className: 'bt-popup' });
+      marker._btType = p.type;
+      marker._btStatus = p.status;
+      marker.addTo(map);
+      markers.push(marker);
+    });
+
+    // ─── Filter logic
+    var filterBtns = document.querySelectorAll('.map-filter');
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.getAttribute('data-filter');
+        markers.forEach(function(m) {
+          if (filter === 'all' || m._btType === filter) {
+            m.addTo(map);
+          } else {
+            map.removeLayer(m);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

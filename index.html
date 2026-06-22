@@ -25,8 +25,8 @@
     </a>
     <ul class="nav-links" role="list">
       <li><a href="about.html">about</a></li>
-      <!-- Map is blocked — coming soon -->
-      <li><a href="map.html" class="muted" tabindex="-1" aria-hidden="true">map</a></li>
+      <li><a href="cafe.html">café</a></li>
+      <li><a href="map.html">map</a></li>
       <li><a href="contact.html">contact</a></li>
       <!-- TODO: Replace # with Substack URL once set up -->
       <li><a href="#" class="btn btn--outline">newsletter →</a></li>
@@ -41,7 +41,8 @@
   <!-- Mobile fullscreen menu -->
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
     <a href="about.html">about</a>
-    <a href="map.html" class="muted" aria-hidden="true">map (coming soon)</a>
+    <a href="cafe.html">café</a>
+    <a href="map.html">map</a>
     <a href="contact.html">contact</a>
     <!-- TODO: Replace # with Substack URL once set up -->
     <a href="#">newsletter →</a>
@@ -109,13 +110,38 @@
       </div>
     </section>
 
+    <!-- ─── Values strip ─── -->
+    <section class="values-strip" aria-label="What we believe">
+      <div class="values-strip__inner">
+        <div class="value-item">
+          <p class="value-item__num">01</p>
+          <p>Third wave quality. First round friendliness.</p>
+        </div>
+        <div class="value-item">
+          <p class="value-item__num">02</p>
+          <p>The cultural drink, not just the specialty one.</p>
+        </div>
+        <div class="value-item">
+          <p class="value-item__num">03</p>
+          <p>The farmer's story belongs in the cup.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── Newsletter CTA ─── -->
     <section class="newsletter-cta" id="newsletter" aria-label="Newsletter">
       <p class="newsletter-cta__copy">
         We write longer versions of all of this in our newsletter. Pull up a chair.
       </p>
+      <!-- TODO: Replace REPLACE_WITH_YOUR_FORMSPREE_ID with your Formspree form ID from formspree.io -->
+      <form class="email-capture" id="home-email-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST" novalidate aria-label="Newsletter sign-up">
+        <label for="home-email" class="sr-only">Your email address</label>
+        <input type="email" id="home-email" name="email" placeholder="your@email.com" required autocomplete="email">
+        <button type="submit" class="btn btn--cream">subscribe →</button>
+      </form>
+      <p class="email-capture__feedback" id="home-email-feedback" aria-live="polite"></p>
       <!-- TODO: Replace # with Substack URL once set up -->
-      <a href="#" class="btn btn--cream">read the newsletter →</a>
+      <p class="newsletter-cta__sub">or <a href="#">read the archive on Substack →</a></p>
     </section>
 
   </main>

@@ -1,5 +1,5 @@
 // Bean Town — main.js
-// Nav scroll state + mobile menu toggle
+// Nav scroll state, mobile menu toggle, email capture, scroll reveal
 
 (function () {
 
@@ -44,4 +44,69 @@
     });
   }
 
+})();
+
+// ─── Email capture — AJAX form submission
+(function () {
+  function setupForm(formId, feedbackId) {
+    var form = document.getElementById(formId);
+    var feedback = document.getElementById(feedbackId);
+    if (!form || !feedback) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var original = btn.textContent;
+      btn.textContent = 'sending…';
+      btn.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            feedback.textContent = 'you\'re in. first email on us.';
+            form.reset();
+          } else {
+            feedback.textContent = 'something went wrong — try again or email us directly.';
+          }
+        })
+        .catch(function () {
+          feedback.textContent = 'couldn\'t reach the server — check your connection.';
+        })
+        .finally(function () {
+          btn.textContent = original;
+          btn.disabled = false;
+        });
+    });
+  }
+
+  setupForm('home-email-form', 'home-email-feedback');
+  setupForm('cafe-email-form', 'cafe-email-feedback');
+})();
+
+// ─── Scroll reveal
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+
+  var targets = document.querySelectorAll(
+    '.card, .principle, .bar-step, .value-item, .space-detail, .wave-list li, .founder'
+  );
+  if (!targets.length) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  targets.forEach(function (el) {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
 })();
