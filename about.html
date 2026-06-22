@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Bean Town</title>
+  <meta name="description" content="Bean Town is co-founded by Alex Hamilton and Adam Smylie — two friends from Northern Ireland who between them have lived in Japan, Mexico, Spain, and a few places in between.">
+  <meta property="og:title" content="About — Bean Town">
+  <meta property="og:description" content="Two friends from Northern Ireland. A lot of coffee. No barista credentials.">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── Navigation ─── -->
+  <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Bean Town home">
+      <span class="logo-text logo-text--light">bean town</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="about.html">about</a></li>
+      <li><a href="map.html" class="muted" tabindex="-1" aria-hidden="true">map</a></li>
+      <li><a href="contact.html">contact</a></li>
+      <!-- TODO: Replace # with Substack URL once set up -->
+      <li><a href="#" class="btn btn--outline">newsletter →</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <a href="about.html">about</a>
+    <a href="map.html" class="muted" aria-hidden="true">map (coming soon)</a>
+    <a href="contact.html">contact</a>
+    <!-- TODO: Replace # with Substack URL once set up -->
+    <a href="#">newsletter →</a>
+  </div>
+
+  <main>
+
+    <!-- ─── Page hero ─── -->
+    <section class="page-hero">
+      <h1 class="page-hero__title">about us</h1>
+      <p class="page-hero__subtitle">
+        Two friends from Northern Ireland. A lot of coffee. No barista credentials.
+      </p>
+    </section>
+
+    <!-- ─── Manifesto ─── -->
+    <section class="manifesto">
+      <p class="manifesto__pull">
+        "We kept noticing the same thing: the way people drink coffee tells you something
+        true about the place they're from."
+      </p>
+      <p>
+        The clay pot and piloncillo in a Mexican kitchen. The three-round jebena ceremony
+        in Ethiopia. The canned coffee from a vending machine outside a ski lodge in Hokkaido.
+        None of it needed to be evaluated against a cupping score to be interesting.
+      </p>
+      <p>
+        So we made a brand to explore that. We're not baristas, not roasters, not World Barista
+        Champions. We're two people who travel, drink coffee, and think the interesting questions
+        aren't about extraction ratios — they're about why this cup tastes like this, here,
+        and what that means about the people who made it.
+      </p>
+      <p>
+        We're calling it the 4th wave. Less about perfecting the craft, more about understanding
+        the culture. First round's on us.
+      </p>
+    </section>
+
+    <!-- ─── Founders ─── -->
+    <section class="founders-grid" aria-label="The founders">
+
+      <div class="founder">
+        <p class="founder__label">co-founder</p>
+        <h2 class="founder__name">Alex Hamilton</h2>
+        <p class="founder__location">Madrid (La Latina) — Irish-Mexican</p>
+        <p>
+          Alex comes at coffee as a curious non-expert who has lived in enough places to notice
+          that it means something different everywhere. Madrid daily life is a cortado at the bar,
+          café con leche while standing up. Mexico City is family roots and café de olla before
+          anything else happens in the morning.
+        </p>
+        <p>
+          Background in data storytelling and editorial work — which means Bean Town gets the
+          "here's what's actually interesting about this" framing. Not the barista's view.
+          The traveller with good instincts and a notebook.
+        </p>
+        <p>
+          Also: Northern Ireland, Amsterdam, Edinburgh, Paris, New York, and a running list
+          of places where he ordered something and wrote it down.
+        </p>
+      </div>
+
+      <div class="founder">
+        <p class="founder__label">co-founder</p>
+        <h2 class="founder__name">Adam Smylie</h2>
+        <p class="founder__location">Edinburgh / Furano, Japan</p>
+        <p>
+          Adam is a professional snowboard instructor trainer who runs CREAM Snowboarding —
+          a small brand he built from scratch with a hand-drawn logo, merch, and a following.
+          Bean Town's visual identity is his doing too.
+        </p>
+        <p>
+          He spends every winter in Japan, which gives him genuine first-person access to
+          kissaten culture, canned coffee from vending machines at 6am, and the precise
+          quiet of a Tokyo pour-over bar. He's also been to Vietnam, Nepal, and New Zealand —
+          he writes from inside the experience, not just passing through it.
+        </p>
+        <p>
+          Bean Town's energy comes from a principle Adam brought in from the start:
+          exceptional craft, zero self-seriousness. Same reason we named it after a Vulfpeck track.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ─── The four waves ─── -->
+    <section class="wave-section">
+      <div class="wave-section__inner">
+        <h2>the four waves</h2>
+        <ul class="wave-list">
+          <li data-wave="1">
+            <strong>First wave — coffee as commodity.</strong> Maxwell House, Nescafé, the tin in
+            the cupboard. Coffee as functional, not cultural. It gets you through the morning.
+          </li>
+          <li data-wave="2">
+            <strong>Second wave — coffee as experience.</strong> Starbucks, the Italian café ideal,
+            the naming of the drinks. Coffee as occasion — somewhere to be, something to order.
+          </li>
+          <li data-wave="3">
+            <strong>Third wave — coffee as craft.</strong> Specialty grades, single origin, precise
+            technique, terroir conversations. The practitioner's art form. The barista as auteur.
+          </li>
+          <li data-wave="4">
+            <strong>Fourth wave (our definition) — coffee as connection.</strong> We keep the quality.
+            We drop the hierarchy. The focus shifts from the practitioner's execution to the drinker's
+            understanding and enjoyment. Education that brings people in, not gatekeeping that keeps
+            them out.
+          </li>
+        </ul>
+        <p>That's where Bean Town lives. Third wave quality, first round friendliness.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <a href="/" class="footer-logo" aria-label="Bean Town home">
+        <span class="logo-text logo-text--light">bean town</span>
+      </a>
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">about</a></li>
+        <!-- TODO: Replace # with Instagram URL once handle is confirmed -->
+        <li><a href="#" aria-label="Bean Town on Instagram">instagram</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Bean Town</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

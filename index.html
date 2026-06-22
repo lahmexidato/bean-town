@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Town — coffee from everywhere. for everyone.</title>
+  <meta name="description" content="Bean Town is a coffee culture education brand. We explore the world through what people drink and what they eat alongside it. No gatekeeping. No extraction ratios.">
+  <meta property="og:title" content="Bean Town">
+  <meta property="og:description" content="Coffee from everywhere. For everyone.">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta property="og:type" content="website">
+  <!-- TODO: Add og:url once domain is registered -->
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── Navigation ─── -->
+  <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Bean Town home">
+      <span class="logo-text logo-text--light">bean town</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="about.html">about</a></li>
+      <!-- Map is blocked — coming soon -->
+      <li><a href="map.html" class="muted" tabindex="-1" aria-hidden="true">map</a></li>
+      <li><a href="contact.html">contact</a></li>
+      <!-- TODO: Replace # with Substack URL once set up -->
+      <li><a href="#" class="btn btn--outline">newsletter →</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile fullscreen menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <a href="about.html">about</a>
+    <a href="map.html" class="muted" aria-hidden="true">map (coming soon)</a>
+    <a href="contact.html">contact</a>
+    <!-- TODO: Replace # with Substack URL once set up -->
+    <a href="#">newsletter →</a>
+  </div>
+
+  <main>
+
+    <!-- ─── Hero ─── -->
+    <section class="hero" aria-label="Introduction">
+      <p class="hero__wordmark logo-text logo-text--light">bean town</p>
+      <p class="hero__tagline">coffee from everywhere. for everyone.</p>
+      <p class="hero__intro">
+        We travel — or at least our cups do. Each edition we pick a country, dive into its coffee
+        culture, and pair it with the food it belongs beside. No barista credentials. No gatekeeping.
+        Just coffee, context, and something to eat.
+      </p>
+      <a href="#editions" class="btn btn--cream">see the editions ↓</a>
+      <span class="hero__scroll" aria-hidden="true">scroll</span>
+    </section>
+
+    <!-- ─── Country editions ─── -->
+    <section class="editions" id="editions" aria-label="Country editions">
+      <p class="section-label">country editions</p>
+      <div class="cards-grid">
+
+        <article class="card">
+          <p class="card__country">Mexico</p>
+          <h2 class="card__prep">Café de olla</h2>
+          <p class="card__pairing">+ pan dulce</p>
+          <p class="card__copy">
+            Cinnamon, piloncillo, and a clay pot. Made slowly, drunk slowly,
+            usually before anything else happens in the day. This is the one
+            your abuela had a strong opinion about.
+          </p>
+          <!-- TODO: Replace # with Substack edition URL once published -->
+          <span class="card__link card__link--muted" aria-label="Coming soon">coming soon →</span>
+        </article>
+
+        <article class="card">
+          <p class="card__country">Ethiopia</p>
+          <h2 class="card__prep">Jebena ceremony</h2>
+          <p class="card__pairing">+ roasted barley</p>
+          <p class="card__copy">
+            Coffee was born here. The jebena ceremony — three rounds, same grounds,
+            each cup lighter than the last — might be the most important thing
+            anyone has ever done with a coffee plant.
+          </p>
+          <!-- TODO: Replace # with Substack edition URL once published -->
+          <span class="card__link card__link--muted" aria-label="Coming soon">coming soon →</span>
+        </article>
+
+        <article class="card">
+          <p class="card__country">Japan</p>
+          <h2 class="card__prep">Kissaten drip</h2>
+          <p class="card__pairing">+ wagashi</p>
+          <p class="card__copy">
+            Japan took coffee, slowed it down, and built a whole room around it.
+            The kissaten — a serious coffee shop, not a café — is one of the
+            quietest, most considered things you can walk into.
+          </p>
+          <!-- TODO: Replace # with Substack edition URL once published -->
+          <span class="card__link card__link--muted" aria-label="Coming soon">coming soon →</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ─── Newsletter CTA ─── -->
+    <section class="newsletter-cta" id="newsletter" aria-label="Newsletter">
+      <p class="newsletter-cta__copy">
+        We write longer versions of all of this in our newsletter. Pull up a chair.
+      </p>
+      <!-- TODO: Replace # with Substack URL once set up -->
+      <a href="#" class="btn btn--cream">read the newsletter →</a>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <a href="/" class="footer-logo" aria-label="Bean Town home">
+        <span class="logo-text logo-text--light">bean town</span>
+      </a>
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">about</a></li>
+        <!-- TODO: Replace # with Instagram URL once handle is confirmed -->
+        <li><a href="#" aria-label="Bean Town on Instagram">instagram</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Bean Town</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

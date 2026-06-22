@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The map — Bean Town</title>
+  <meta name="description" content="An interactive map of coffee cultures around the world. Coming soon from Bean Town.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── Navigation ─── -->
+  <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Bean Town home">
+      <span class="logo-text logo-text--light">bean town</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="about.html">about</a></li>
+      <li><a href="map.html" class="muted" tabindex="-1" aria-hidden="true">map</a></li>
+      <li><a href="contact.html">contact</a></li>
+      <!-- TODO: Replace # with Substack URL once set up -->
+      <li><a href="#" class="btn btn--outline">newsletter →</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <a href="about.html">about</a>
+    <a href="map.html" class="muted" aria-hidden="true">map (coming soon)</a>
+    <a href="contact.html">contact</a>
+    <a href="#">newsletter →</a>
+  </div>
+
+  <main>
+
+    <!-- ─── Page hero ─── -->
+    <section class="page-hero">
+      <h1 class="page-hero__title">the map</h1>
+      <p class="page-hero__subtitle">An interactive world of coffee cultures. Coming soon.</p>
+    </section>
+
+    <!-- ─── Placeholder ─── -->
+    <!-- MAP IS BLOCKED — awaiting Alex + Adam sign-off on map concept.
+         Once approved, build with Leaflet.js:
+         - Dark/espresso tile layer
+         - Terracotta markers for published editions
+         - Warm-gray markers for upcoming countries
+         - Click → popup with prep name + Substack link
+         Countries to mark initially: Mexico, Ethiopia, Japan, Vietnam, Colombia
+    -->
+    <div class="map-placeholder">
+      <p class="map-placeholder__title">coming soon</p>
+      <p class="map-placeholder__sub">
+        We're building an interactive map of coffee cultures around the world.
+        It'll be worth the wait.
+      </p>
+      <a href="/" class="btn btn--cream" style="margin-top: 8px;">back to home →</a>
+    </div>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <a href="/" class="footer-logo" aria-label="Bean Town home">
+        <span class="logo-text logo-text--light">bean town</span>
+      </a>
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">about</a></li>
+        <li><a href="#" aria-label="Bean Town on Instagram">instagram</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Bean Town</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

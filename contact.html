@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Bean Town</title>
+  <meta name="description" content="Get in touch with Bean Town. Questions, country suggestions, feedback — we read everything.">
+  <meta property="og:title" content="Contact — Bean Town">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── Navigation ─── -->
+  <nav class="site-nav" id="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Bean Town home">
+      <span class="logo-text logo-text--light">bean town</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="about.html">about</a></li>
+      <li><a href="map.html" class="muted" tabindex="-1" aria-hidden="true">map</a></li>
+      <li><a href="contact.html">contact</a></li>
+      <!-- TODO: Replace # with Substack URL once set up -->
+      <li><a href="#" class="btn btn--outline">newsletter →</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <a href="about.html">about</a>
+    <a href="map.html" class="muted" aria-hidden="true">map (coming soon)</a>
+    <a href="contact.html">contact</a>
+    <!-- TODO: Replace # with Substack URL once set up -->
+    <a href="#">newsletter →</a>
+  </div>
+
+  <main>
+
+    <!-- ─── Page hero ─── -->
+    <section class="page-hero">
+      <h1 class="page-hero__title">say hello</h1>
+      <p class="page-hero__subtitle">
+        Questions, feedback, a country we should cover next — we're interested in all of it.
+      </p>
+    </section>
+
+    <!-- ─── Contact form ─── -->
+    <section class="contact-section">
+      <h2>get in touch</h2>
+      <p class="subtitle">
+        We read everything. If you have a coffee recommendation, a story from somewhere
+        we haven't covered, or just want to tell us we got something wrong — fill in the form.
+      </p>
+
+      <!-- GOOGLE FORM IFRAME GOES HERE -->
+      <!-- TODO: Alex to provide Google Form iframe embed code.
+           Replace the placeholder div below with the <iframe> tag.
+           Example:
+           <iframe
+             src="https://docs.google.com/forms/d/e/XXXXX/viewform?embedded=true"
+             class="form-embed"
+             title="Contact Bean Town"
+             loading="lazy">
+             Loading form…
+           </iframe>
+      -->
+      <div class="form-placeholder">
+        <p>Contact form coming soon.</p>
+        <p>
+          In the meantime, find us on
+          <!-- TODO: Replace # with Instagram URL once confirmed -->
+          <a href="#">Instagram</a>.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <a href="/" class="footer-logo" aria-label="Bean Town home">
+        <span class="logo-text logo-text--light">bean town</span>
+      </a>
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">about</a></li>
+        <!-- TODO: Replace # with Instagram URL once handle is confirmed -->
+        <li><a href="#" aria-label="Bean Town on Instagram">instagram</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Bean Town</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
