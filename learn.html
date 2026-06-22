@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn — Bean Town</title>
-  <meta name="description" content="The good stuff, without the gatekeeping. Explore Mexico's coffee regions, find farms worth visiting, and discover voices that explain coffee without making you feel like an idiot.">
-  <meta property="og:title" content="Learn — Bean Town">
+  <title>Learn, Bean Town</title>
+  <meta name="description" content="James Hoffmann, the World Atlas of Coffee, and a few voices worth following. The good stuff, without the gatekeeping.">
+  <meta property="og:title" content="Learn, Bean Town">
   <meta property="og:description" content="The good stuff, without the gatekeeping.">
   <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,6 @@
       <li><a href="cafe.html">café</a></li>
       <li><a href="learn.html" aria-current="page">learn</a></li>
       <li><a href="map.html">map</a></li>
-      <li><a href="contact.html">contact</a></li>
       <!-- TODO: Replace # with Substack URL once set up -->
       <li><a href="#" class="btn btn--outline">newsletter →</a></li>
     </ul>
@@ -41,7 +40,6 @@
     <a href="cafe.html">café</a>
     <a href="learn.html">learn</a>
     <a href="map.html">map</a>
-    <a href="contact.html">contact</a>
     <!-- TODO: Replace # with Substack URL once set up -->
     <a href="#">newsletter →</a>
   </div>
@@ -57,179 +55,19 @@
       </p>
     </section>
 
-    <!-- ─── Mexico coffee regions ─── -->
-    <section class="learn-section" id="mexico-regions" aria-label="Mexico coffee regions">
-      <div class="learn-section__inner">
-        <p class="section-label">origin spotlight</p>
-        <h2 class="learn-section__title">Mexico's coffee regions</h2>
-        <p class="learn-section__intro">
-          Mexico produces around 4 million bags of coffee a year, mostly from five southern states.
-          Each region has its own altitude, microclimate, and character — and almost none of it
-          reaches the international specialty market. Hover a region to learn more.
-        </p>
-      </div>
-
-      <!-- Interactive Mexico map -->
-      <div class="mexico-map-container" role="region" aria-label="Interactive map of Mexico's coffee growing regions">
-        <div class="mexico-map-body">
-
-          <div class="mexico-map-svg-wrap">
-            <svg viewBox="0 0 680 415" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-
-              <!-- Mexico mainland outline -->
-              <path d="M 96,52 L 596,47 L 632,64 L 648,102 L 658,146 L 654,184 L 658,220 L 668,249
-                       L 680,264 L 688,264 L 692,281 L 692,353 L 676,370 L 650,377 L 624,392
-                       L 590,404 L 556,404 L 510,386 L 462,370 L 414,355 L 360,336 L 298,312
-                       L 238,285 L 180,252 L 132,215 L 104,177 L 91,142 L 95,107 Z"
-                    fill="rgba(242,237,227,0.05)" stroke="rgba(242,237,227,0.18)"
-                    stroke-width="1.5" stroke-linejoin="round"/>
-
-              <!-- Baja California -->
-              <path d="M 96,52 L 87,78 L 78,112 L 69,150 L 60,188 L 52,222 L 46,255 L 49,270
-                       L 56,263 L 63,241 L 70,214 L 78,185 L 85,155 L 91,124 L 95,95 Z"
-                    fill="rgba(242,237,227,0.05)" stroke="rgba(242,237,227,0.18)"
-                    stroke-width="1.5" stroke-linejoin="round"/>
-
-              <!-- Gulf of California water -->
-              <path d="M 96,52 L 95,95 L 91,124 L 85,155 L 78,185 L 70,214 L 63,241 L 56,263
-                       L 60,275 L 76,270 L 90,258 L 100,240 L 104,215 L 103,187 L 100,158
-                       L 98,128 L 97,100 Z"
-                    fill="#2A1F14" stroke="none"/>
-
-              <!-- Connector lines to labels -->
-              <line x1="533" y1="248" x2="574" y2="224" stroke="rgba(242,237,227,0.1)" stroke-width="1"/>
-              <line x1="457" y1="268" x2="428" y2="244" stroke="rgba(242,237,227,0.1)" stroke-width="1"/>
-              <line x1="350" y1="340" x2="308" y2="320" stroke="rgba(242,237,227,0.1)" stroke-width="1"/>
-              <line x1="448" y1="365" x2="412" y2="348" stroke="rgba(242,237,227,0.1)" stroke-width="1"/>
-              <line x1="556" y1="387" x2="586" y2="363" stroke="rgba(242,237,227,0.1)" stroke-width="1"/>
-
-              <!-- Region labels -->
-              <text x="576" y="221" class="region-label">VERACRUZ</text>
-              <text x="390" y="241" class="region-label">PUEBLA</text>
-              <text x="272" y="318" class="region-label">GUERRERO</text>
-              <text x="374" y="346" class="region-label">OAXACA</text>
-              <text x="587" y="361" class="region-label">CHIAPAS</text>
-
-              <!-- Region dots -->
-              <circle class="region-dot" data-region="veracruz" cx="533" cy="248" r="11" fill="#5C6B3F" opacity="0.85"/>
-              <circle class="region-dot" data-region="puebla"   cx="457" cy="268" r="10" fill="#3D4A2E" opacity="0.85"/>
-              <circle class="region-dot" data-region="guerrero" cx="350" cy="340" r="9"  fill="#8A8278" opacity="0.75"/>
-              <circle class="region-dot" data-region="oaxaca"   cx="448" cy="365" r="11" fill="#C8963E" opacity="0.85"/>
-              <circle class="region-dot" data-region="chiapas"  cx="556" cy="387" r="13" fill="#B5501C" opacity="0.9"/>
-
-              <!-- Active rings (toggled by JS) -->
-              <circle class="region-ring" id="ring-veracruz" cx="533" cy="248" r="17" fill="none" stroke="#5C6B3F" stroke-width="1.5" opacity="0"/>
-              <circle class="region-ring" id="ring-puebla"   cx="457" cy="268" r="16" fill="none" stroke="#3D4A2E" stroke-width="1.5" opacity="0"/>
-              <circle class="region-ring" id="ring-guerrero" cx="350" cy="340" r="15" fill="none" stroke="#8A8278" stroke-width="1.5" opacity="0"/>
-              <circle class="region-ring" id="ring-oaxaca"   cx="448" cy="365" r="17" fill="none" stroke="#C8963E" stroke-width="1.5" opacity="0"/>
-              <circle class="region-ring" id="ring-chiapas"  cx="556" cy="387" r="19" fill="none" stroke="#B5501C" stroke-width="1.5" opacity="0"/>
-
-              <!-- Guatemala reference -->
-              <circle cx="598" cy="402" r="5" fill="none" stroke="rgba(242,237,227,0.15)" stroke-width="1" stroke-dasharray="3,2"/>
-              <text x="606" y="405" style="font-size:9px;fill:rgba(242,237,227,0.2);font-family:'DM Sans',sans-serif;">Antigua ↓</text>
-            </svg>
-          </div>
-
-          <!-- Info panel -->
-          <aside class="mexico-info-panel" id="mexico-info-panel" aria-live="polite" aria-label="Region details">
-            <div class="mexico-info-empty" id="mexico-info-empty">
-              <p>Hover a region on the map to learn about its coffee — altitude, climate, what makes it different.</p>
-            </div>
-            <div class="mexico-info-card" id="mexico-info-card" hidden>
-              <p class="mexico-info__kicker" id="info-kicker">region</p>
-              <h3 class="mexico-info__name" id="info-name"></h3>
-              <dl class="mexico-info__dl">
-                <dt>altitude</dt>
-                <dd id="info-alt"></dd>
-                <dt>climate</dt>
-                <dd id="info-climate"></dd>
-              </dl>
-              <p class="mexico-info__flavor" id="info-flavor"></p>
-              <p class="mexico-info__note" id="info-note"></p>
-            </div>
-          </aside>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── Farm experiences ─── -->
-    <section class="learn-section learn-section--dark" id="farms" aria-label="Farm experiences">
-      <div class="learn-section__inner">
-        <p class="section-label section-label--light">go in person</p>
-        <h2 class="learn-section__title learn-section__title--light">farms worth the trip</h2>
-        <p class="learn-section__intro learn-section__intro--light">
-          Nothing replaces standing in a coffee farm. The smell of the flowers, the weight
-          of a ripe cherry, watching someone sort beans by hand — it reframes every cup you drink
-          after that.
-        </p>
-        <div class="farms-grid">
-
-          <article class="farm-card farm-card--featured">
-            <div class="farm-card__meta">
-              <p class="farm-card__country">Guatemala</p>
-              <span class="farm-card__tag">farm + museum</span>
-            </div>
-            <h3 class="farm-card__name">Finca La Azotea</h3>
-            <p class="farm-card__location">Antigua, Guatemala — 1,500m</p>
-            <p class="farm-card__copy">
-              A working farm and coffee museum a few kilometres from Antigua's main square.
-              Guided tours walk you through the full process — from the cherry on the tree
-              to a finished espresso — with exhibits explaining each stage in plain language.
-              The museum section covers the Mayan history of cacao and coffee in the region.
-              This is the place that inspired the bar concept for Bean Town.
-            </p>
-            <p class="farm-card__tip">
-              Best time to visit: November–January (harvest season). Book the morning tour —
-              it includes the roasting demo.
-            </p>
-          </article>
-
-          <article class="farm-card">
-            <div class="farm-card__meta">
-              <p class="farm-card__country">Mexico</p>
-              <span class="farm-card__tag">coming soon</span>
-            </div>
-            <h3 class="farm-card__name">Oaxaca &amp; Chiapas</h3>
-            <p class="farm-card__location">Southern Mexico</p>
-            <p class="farm-card__copy">
-              We're researching farm visits in both regions — cooperatives, small producers,
-              and places that welcome visitors who want to understand the process rather
-              than just buy a bag.
-            </p>
-          </article>
-
-          <article class="farm-card">
-            <div class="farm-card__meta">
-              <p class="farm-card__country">Colombia</p>
-              <span class="farm-card__tag">coming soon</span>
-            </div>
-            <h3 class="farm-card__name">Coffee Region (Eje Cafetero)</h3>
-            <p class="farm-card__location">Salento, Armenia, Manizales</p>
-            <p class="farm-card__copy">
-              The Colombian coffee triangle is one of the most accessible coffee regions
-              in the world for visitors. We're finding the farms that go deeper than
-              the tourist trail.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
     <!-- ─── Watch and read ─── -->
     <section class="learn-section" id="resources" aria-label="Watch and read">
       <div class="learn-section__inner">
         <p class="section-label">watch &amp; read</p>
         <h2 class="learn-section__title">voices worth following</h2>
         <p class="learn-section__intro">
-          A short list. Not comprehensive — just the things we'd send someone who said
+          A short list. Not comprehensive, just the things we'd send someone who said
           "I want to actually understand coffee" without wanting a twelve-part masterclass.
         </p>
         <div class="resources-grid">
 
           <article class="resource-card">
-            <p class="resource-card__type">YouTube — free</p>
+            <p class="resource-card__type">YouTube, free</p>
             <h3 class="resource-card__name">James Hoffmann</h3>
             <p class="resource-card__copy">
               The best explainer in coffee. Hoffmann has the rare ability to be technically
@@ -244,7 +82,7 @@
             <p class="resource-card__type">Book</p>
             <h3 class="resource-card__name">The World Atlas of Coffee</h3>
             <p class="resource-card__copy">
-              Also by Hoffmann. Country by country, origin by origin — the physical object
+              Also by Hoffmann. Country by country, origin by origin, the physical object
               of understanding coffee as a global crop. Not a technical manual; more like
               a well-researched travel guide for the curious drinker. The photography alone
               makes it worth owning.
@@ -252,40 +90,15 @@
             <p class="resource-card__note">James Hoffmann, 2014 (updated 2018)</p>
           </article>
 
-          <article class="resource-card">
-            <p class="resource-card__type">YouTube — free</p>
-            <h3 class="resource-card__name">World Barista Championship</h3>
-            <p class="resource-card__copy">
-              Watch the competition rounds not to learn technique but to hear how the best
-              baristas in the world talk about the farmers they work with. The presentations
-              are essentially five-minute stories about a specific coffee and the people
-              who grew it. That part's genuinely moving.
-            </p>
-            <a href="https://www.youtube.com/@WorldCoffeeEvents" target="_blank" rel="noopener noreferrer" class="resource-card__link">youtube.com/@WorldCoffeeEvents →</a>
-          </article>
 
         </div>
-      </div>
-    </section>
-
-    <!-- ─── Events placeholder ─── -->
-    <section class="learn-section learn-section--olive" id="events" aria-label="Events">
-      <div class="learn-section__inner">
-        <p class="section-label section-label--light">get out there</p>
-        <h2 class="learn-section__title learn-section__title--light">events &amp; tastings</h2>
-        <p class="learn-section__intro learn-section__intro--light">
-          Coffee events — cuppings, origin dinners, roastery open days — are one of the
-          best ways to taste a lot of different coffees in one room and ask questions without
-          feeling like you're being judged. We're building a list.
-        </p>
-        <p class="learn-coming-soon">coming soon — <a href="contact.html">suggest an event</a></p>
       </div>
     </section>
 
     <!-- ─── Newsletter CTA ─── -->
     <section class="newsletter-cta" id="newsletter" aria-label="Newsletter">
       <p class="newsletter-cta__copy">
-        We cover all of this — and more — in the newsletter.
+        We cover all of this, and more, in the newsletter.
       </p>
       <form class="email-capture" id="learn-email-form" action="https://formspree.io/f/xnjkqgqp" method="POST" novalidate aria-label="Newsletter sign-up">
         <label for="learn-email" class="sr-only">Your email address</label>
@@ -307,115 +120,13 @@
         <li><a href="about.html">about</a></li>
         <!-- TODO: Replace # with Instagram URL once handle is confirmed -->
         <li><a href="#" aria-label="Bean Town on Instagram">instagram</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
+        </ul>
       <p class="footer-copy">© 2026 Bean Town</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
   <script>
-    // ─── Mexico regions map interaction
-    var regionData = {
-      chiapas: {
-        name: 'Chiapas',
-        color: '#B5501C',
-        alt: '1,000 – 2,000m',
-        climate: 'Subtropical, high humidity, volcanic soil',
-        flavor: 'Chocolate, red fruit, full body. Mexico\'s most productive region — borders Guatemala and shares the same volcanic geology as Antigua. The most complex and internationally recognised of Mexico\'s growing areas.',
-        note: 'Largest producer — roughly 40% of all Mexican coffee'
-      },
-      oaxaca: {
-        name: 'Oaxaca',
-        color: '#C8963E',
-        alt: '900 – 1,900m',
-        climate: 'Dry mountain air, intense sun, cool nights',
-        flavor: 'Bright acidity, tropical fruit, floral notes. Many indigenous varieties. Often grown by small cooperatives, frequently certified organic.',
-        note: 'Pluma Hidalgo is its most celebrated sub-region'
-      },
-      veracruz: {
-        name: 'Veracruz',
-        color: '#5C6B3F',
-        alt: '900 – 1,800m',
-        climate: 'Gulf coast humidity, variable rainfall',
-        flavor: 'Mild, balanced, nutty with light citrus. The oldest Mexican coffee region — cultivation began here in the early 1800s. Coatepec is the name to know.',
-        note: 'Mexico\'s oldest coffee-producing region'
-      },
-      puebla: {
-        name: 'Puebla',
-        color: '#3D4A2E',
-        alt: '900 – 1,600m',
-        climate: 'Cool Sierra Norte mountain air',
-        flavor: 'Clean and sweet, light body, vanilla notes. Less acidic than its neighbours — a good starting point for people new to Mexican specialty coffee.',
-        note: 'Grown in the Sierra Norte highlands'
-      },
-      guerrero: {
-        name: 'Guerrero',
-        color: '#8A8278',
-        alt: '900 – 1,500m',
-        climate: 'Pacific coast, pronounced dry season',
-        flavor: 'Dark chocolate, earthy, bold. One of Mexico\'s most underrated regions — very little reaches the international specialty market. Small farms, almost entirely undiscovered abroad.',
-        note: 'Largely unknown outside Mexico'
-      }
-    };
-
-    var locked = null;
-
-    function showRegion(key) {
-      var r = regionData[key];
-      document.getElementById('mexico-info-empty').hidden = true;
-      var card = document.getElementById('mexico-info-card');
-      card.hidden = false;
-      card.style.setProperty('--region-color', r.color);
-      document.getElementById('info-name').textContent = r.name;
-      document.getElementById('info-alt').textContent = r.alt;
-      document.getElementById('info-climate').textContent = r.climate;
-      document.getElementById('info-flavor').textContent = r.flavor;
-      document.getElementById('info-note').textContent = r.note;
-      Object.keys(regionData).forEach(function(k) {
-        var ring = document.getElementById('ring-' + k);
-        if (ring) ring.setAttribute('opacity', k === key ? '0.6' : '0');
-      });
-    }
-
-    function clearRegion() {
-      if (locked) return;
-      document.getElementById('mexico-info-empty').hidden = false;
-      document.getElementById('mexico-info-card').hidden = true;
-      Object.keys(regionData).forEach(function(k) {
-        var ring = document.getElementById('ring-' + k);
-        if (ring) ring.setAttribute('opacity', '0');
-      });
-    }
-
-    document.querySelectorAll('.region-dot').forEach(function(dot) {
-      dot.addEventListener('mouseenter', function() {
-        if (!locked) showRegion(dot.dataset.region);
-      });
-      dot.addEventListener('mouseleave', clearRegion);
-      dot.addEventListener('click', function() {
-        if (locked === dot.dataset.region) {
-          locked = null;
-          clearRegion();
-        } else {
-          locked = dot.dataset.region;
-          showRegion(locked);
-        }
-      });
-      // Touch support
-      dot.addEventListener('touchstart', function(e) {
-        e.preventDefault();
-        if (locked === dot.dataset.region) {
-          locked = null;
-          clearRegion();
-        } else {
-          locked = dot.dataset.region;
-          showRegion(locked);
-        }
-      }, { passive: false });
-    });
-
-    // Also wire up the email form
     (function() {
       var form = document.getElementById('learn-email-form');
       var feedback = document.getElementById('learn-email-feedback');
@@ -428,7 +139,7 @@
         btn.disabled = true;
         fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
           .then(function(res) {
-            feedback.textContent = res.ok ? 'you\'re in. first email on us.' : 'something went wrong — try again.';
+            feedback.textContent = res.ok ? 'you\'re in. first email on us.' : 'something went wrong, try again.';
           })
           .catch(function() { feedback.textContent = 'couldn\'t reach the server.'; })
           .finally(function() { btn.textContent = original; btn.disabled = false; });
